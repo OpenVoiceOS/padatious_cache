@@ -56,8 +56,8 @@ while not done:
 
 print("DONE!! finished cache")
 
-time.sleep(20)
-exit(1)
+time.sleep(5)
+
 intents.shutdown()
 skill_manager.stop()
 
