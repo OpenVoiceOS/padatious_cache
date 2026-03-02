@@ -27,7 +27,8 @@ jobs:
           python -m pip install build wheel uv
           python -m venv venv
           source venv/bin/activate
-          uv pip install requests langcodes ovos-core[mycroft,lgpl,plugins,skills-essential,skills-extra,skills-audio,skills-gui,skills-internet,skills-media,skills-desktop,skills-ca,skills-pt,skills-en] --pre -c https://github.com/OpenVoiceOS/ovos-releases/raw/refs/heads/main/constraints-alpha.txt
+          uv pip install requests langcodes ovos-core -c https://github.com/OpenVoiceOS/ovos-releases/raw/refs/heads/main/constraints-alpha.txt
+          uv pip install --pre -r https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/refs/heads/main/lists/skills.list
 
       - name: Update intent_cache
         run: |
