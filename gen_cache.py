@@ -3,7 +3,6 @@ import time
 from threading import Event
 
 from ovos_config import Configuration
-from ovos_config.locale import setup_locale
 from ovos_core.intent_services import IntentService
 from ovos_core.skill_manager import SkillManager
 from ovos_utils.fakebus import FakeBus
@@ -16,10 +15,10 @@ cache_created = Event()
 # load all target languages
 Configuration()["secondary_langs"] = ["eu", "es-ES", "gl-ES", "ca-ES", "pt-PT", "pt-BR", "nl-NL", "de-DE", "it-IT",
                                       "fr-FR", "da-DK", "en-US"]
-Configuration()["intents"]["padatious"]["intent_cache"] = f"{os.path.dirname(__file__)}/intent_cache"
-Configuration()["intents"]["pipelines"] = ["ovos-padacioso-pipeline-plugin-high"]
-
-setup_locale()
+# HACK: when pipeline plugins were introduced the default mycroft.conf was not updated to reflect this
+Configuration()["intents"]["ovos-padatious-pipeline-plugin"] = Configuration()["intents"]["padatious"]
+Configuration()["intents"]["ovos-padatious-pipeline-plugin"]["intent_cache"] = f"{os.path.dirname(__file__)}/intent_cache"
+Configuration()["intents"]["pipelines"] = ["ovos-padatious-pipeline-plugin-high"]
 
 bus = FakeBus()
 
