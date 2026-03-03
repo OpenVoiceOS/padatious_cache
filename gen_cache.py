@@ -70,7 +70,7 @@ for opt in opts:
 
     def print_m(m):
         """Debug helper to log bus traffic during the training phase."""
-        print(m)
+        #print(m)
 
     def handle_done(m):
         """Success callback: System is ready and all intents are trained."""

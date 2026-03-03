@@ -1,6 +1,6 @@
 # Padatious Intent Cache
 
-Pre-trained Padatious intent classifiers to significantly accelerate the first boot and skill loading of OpenVoiceOS.
+Pre-trained [Padatious intent classifiers](https://github.com/OpenVoiceOS/ovos-padatious-pipeline-plugin) to significantly accelerate the first boot and skill loading of OpenVoiceOS.
 
 ## The Problem
 
